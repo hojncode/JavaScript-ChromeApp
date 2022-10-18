@@ -7,10 +7,7 @@ const loginButton = document.querySelector("#login-form button");
 
 
 function onLoginBtnClick() {
-    console.dir(loginInput)
-    console.dir()
-    console.log("클릭이 실행되었음")
-    alert(loginInput.title)
+    console.log("hello", loginInput.value);
 }
 
 loginButton.addEventListener("click",onLoginBtnClick )
