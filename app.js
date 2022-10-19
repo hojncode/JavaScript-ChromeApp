@@ -8,7 +8,7 @@ const loginButton = document.querySelector("#login-form button");
 
 function onLoginBtnClick() {
     const username = loginInput.value;  // 변수선언은 함수내에서 해야한다.
-    console.log(username);
+    console.log(username.length);
     if(username === "") {
         alert("이름을 입력하세요"); 
     } else if(username.length > 15) {
@@ -17,4 +17,4 @@ function onLoginBtnClick() {
     
 }
 
-loginButton.addEventListener("click",onLoginBtnClick )
+// loginButton.addEventListener("click",onLoginBtnClick )
