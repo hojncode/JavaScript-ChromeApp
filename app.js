@@ -7,7 +7,14 @@ const loginButton = document.querySelector("#login-form button");
 
 
 function onLoginBtnClick() {
-    console.log("hello", loginInput.value);
+    const username = loginInput.value;  // 변수선언은 함수내에서 해야한다.
+    console.log(username);
+    if(username === "") {
+        alert("이름을 입력하세요"); 
+    } else if(username.length > 15) {
+        alert("글자 수 제한 15") ;
+    }
+    
 }
 
 loginButton.addEventListener("click",onLoginBtnClick )
