@@ -20,7 +20,7 @@ function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME); // classList.add는 실행후 해당 동작을 추가해준다. 여기서는 css를 사용해 display:none;을 적용시킨다.
     const username = loginInput.value;
-    console.log(username);
+    localStorage.setItem("저장된이름",username)
     greeting.innerText = `Hello  ${username}`; //greeting.innerText = "Hello " + username; 과 같다 - 백틱사용
     greeting.classList.remove(HIDDEN_CLASSNAME)
 
