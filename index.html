@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css"/>
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>나의 크롬앱 만들기</title>
   </head>
   <body>
-    <form id="login-form" >
-      <input required maxlength="5" title="인풋의 타이틀이에요" type="text" placeholder="what is your name?" />
-      <input type="submit" value="Log In" />
-      <a href="https://www.naver.com/">네이버</a>
+    <form class="hidden" id="login-form" >
+      <input
+        required
+        maxlength="5"
+        title="인풋의 title이에요"
+        type="text"
+        placeholder="이름을 입력해주세요"
+      />
+      <input type="submit" value="로그인" />
     </form>
+    <!-- <a href="https://www.naver.com/">네이버</a> -->
     <h1 id="greeting" class="hidden"></h1>
-   
     <script src="app.js"></script>
   </body>
 </html>
