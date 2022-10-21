@@ -47,7 +47,6 @@ const author = document.querySelector("#quotes span:last-child");
 
 //Math.random()은 0~1 범위의 랜덤한 숫자를 반환, Math.floor() 는 소수점 이하를 버림한다,
 const randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
-console.log(randomQuote)
 
 
 quote.innerText = randomQuote.quote; //텍스트를 삽입.
