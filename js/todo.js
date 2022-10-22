@@ -5,7 +5,7 @@ const toDoList = document.getElementById("todo-list"); //getElementById 로 id �
 
 const TODOS_KEY = "todos" // 코드 작성시 사람의 실수를 방지하기 위해 변수로 치환해서 사용함.
 
-const toDos = [];
+let toDos = []; //const 대신 let 을 사용해서 업데이트가 가능하도록 만들고, 
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); // localStorage.setItem 는 로컬스토리지에 값을 저장한다(키:밸류 형식이 요구됨), JSON.stringify 는 해당 값을 json 형식의 문자열로 변환 시켜줌.
@@ -51,7 +51,8 @@ const savedToDos = localStorage.getItem(TODOS_KEY) // 로컬스토리지에 저�
 
 if(savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos); // JSON.parse 을 사용해서 json 형식으로 변환.
-    parsedToDos.forEach((item)=> console.log("this is the turn of" , item)) //forEach 는 array 에 있는 각가의 item 에 대해서 실행해준다.
+    toDos = parsedToDos; // 이전에 입력되어 있던 todo 데이터들을 toDos 배열에 넣어주어 리스트로 나열해서 보여 줄 수 있음(let을 사용했기에 가능)
+    parsedToDos.forEach(paintToDo) //forEach 는 array 에 있는 각각의 item 에 대해서 실행해준다. 인자에 paintToDo 를 넣어 줌 으로써 저장된 각각의 데이터를 화면에 렌더 시킬 수 있다.
     // console.log(parsedToDos)
 }
 
