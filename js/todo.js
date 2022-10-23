@@ -5,7 +5,7 @@ const toDoList = document.getElementById("todo-list"); //getElementById 로 id �
 
 const TODOS_KEY = "todos" // 코드 작성시 사람의 실수를 방지하기 위해 변수로 치환해서 사용함.
 
-let toDos = []; //const 대신 let 을 사용해서 업데이트가 가능하도록 만들고, 
+let toDos = []; //const 대신 let 을 사용해서 업데이트가 가능하도록 만들고,
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); // localStorage.setItem 는 로컬스토리지에 값을 저장한다(키:밸류 형식이 요구됨), JSON.stringify 는 해당 값을 json 형식의 문자열로 변환 시켜줌.
@@ -21,7 +21,7 @@ function deleteToDo(event) {
 function paintToDo(newTodo) {
     const li = document.createElement("li"); // createElement 로 li 태그를 html 에 만들어준다.
     const span = document.createElement("span"); // createElement 로 span 태그를 html 에 만들어준다.
-    span.innerText = newTodo; // 여기의 newTodo 는 handleToDoSubmit()에서 만든 것.
+    span.innerText.text = newTodo; // 여기의 newTodo 는 handleToDoSubmit()에서 만든 것.
     const button = document.createElement("button"); // button 생성.
     button.innerText = "❎"; //버튼에 텍스트 추가.
     button.addEventListener("click",deleteToDo); // 이벤트리스너 추가 - click 시 발동.
@@ -35,8 +35,12 @@ function handleToDoSubmit(event) {
     const newTodo = toDoInput.value; // 해당 input태그의 value (화면에 입력된 텍스트값)
     toDoInput.value = ""; // submit 될 때마다 인풋창에 적힌 텍스트를 지워줌(초기화)
     // console.log(newTodo, toDoInput.value); // newTodo 값의 생성, 리셋을 확인하기 위한 콘솔
-    toDos.push(newTodo); //toDos로 생성한 배열에 newTodo(입력한 값)를 넣는다.
-    paintToDo(newTodo); // newTodo를 인자로 보내어 함수 실행 시킴.
+    const newTodoObject = { // object 로 toDos배열에 저장하기 위함.
+        text: newTodo,
+        id: Date.now(),
+    }
+    toDos.push(newTodoObject);  // toDos 배열에 newTodo(입력한 값)를 넣는다.
+    paintToDo(newTodoObject); // 이전 newTodo --> 현재 newTodoObject 를 인자로 보내어 함수 실행 시킴.
     saveToDos();
 }
 
@@ -56,3 +60,20 @@ if(savedToDos !== null) {
     // console.log(parsedToDos)
 }
 
+function sexyFilter() { return true
+
+}
+
+[1,2,3,4].filter(sexyFilter)
+
+sexyFilter(4)
+
+
+//forEach 함수는 paintToDo를 parsedToDos 배열의 요소마다 실행한다.
+//filter 는 true 만 반환하는 성질을 이용한다.
+
+const todos = [{text:"aaa"}, {text:"bbb"}]
+
+function sexyFilter(x) {return x.text !== "aaa"}
+
+todos.filter(sexyFilter)
