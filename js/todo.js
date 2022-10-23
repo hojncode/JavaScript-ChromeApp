@@ -60,20 +60,17 @@ if(savedToDos !== null) {
     // console.log(parsedToDos)
 }
 
-function sexyFilter() { return true
 
-}
-
-[1,2,3,4].filter(sexyFilter)
-
-sexyFilter(4)
+//아래 주석 처리 내용 : filter 의 사용 공부.
+// function sexyFilter() { return true}
+// [1,2,3,4].filter(sexyFilter)
+// sexyFilter(4)
 
 
 //forEach 함수는 paintToDo를 parsedToDos 배열의 요소마다 실행한다.
-//filter 는 true 만 반환하는 성질을 이용한다.
+//filter 는 인자의 값에 해당하는 것만 반환해준다 , 이 성질을 이용하여 원하는 값을 출력해서 사용한다. (여기서는 true 만 반환하게 하여 , 반환된 값들만 고를 수 있다)
 
-const todos = [{text:"aaa"}, {text:"bbb"}]
-
-function sexyFilter(x) {return x.text !== "aaa"}
-
-todos.filter(sexyFilter)
+//아래 3줄을 이해하여, filter 의 사용을 숙지하자.
+// const todos = [{text:"aaa"}, {text:"bbb"}]
+// function sexyFilter(x) {return x.text !== "aaa"}
+// todos.filter(sexyFilter)
