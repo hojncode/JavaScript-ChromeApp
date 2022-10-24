@@ -16,12 +16,16 @@ function deleteToDo(event) {
     // console.dir(event.target.parentElement);
     const li = event.target.parentElement; // 생성된 todoList 들의 고유 주소를 찾음.
     li.remove(); // 해당된 li만 삭제.
+    toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
+    // console.log(toDos)
+    saveToDos();
 }
 
 function paintToDo(newTodo) {
     const li = document.createElement("li"); // createElement 로 li 태그를 html 에 만들어준다.
+    li.id = newTodo.id;
     const span = document.createElement("span"); // createElement 로 span 태그를 html 에 만들어준다.
-    span.innerText.text = newTodo; // 여기의 newTodo 는 handleToDoSubmit()에서 만든 것.
+    span.innerText = newTodo.text; // 여기의 newTodo 는 handleToDoSubmit()에서 만든 것.
     const button = document.createElement("button"); // button 생성.
     button.innerText = "❎"; //버튼에 텍스트 추가.
     button.addEventListener("click",deleteToDo); // 이벤트리스너 추가 - click 시 발동.
