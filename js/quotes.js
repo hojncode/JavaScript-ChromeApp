@@ -43,10 +43,10 @@ const quotes = [
 
 //querySelector로 #id 가 있는 태그로 접근하고, 그 태그안에서 span을 처음 사용한 태그로 접근한다.
 const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quotes span:last-child");
+// const author = document.querySelector("#quote span:last-child");
 
 //Math.random()은 0~1 범위의 랜덤한 숫자를 반환, Math.floor() 는 소수점 이하를 버림한다,
 const randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
 
 
-quote.innerText = randomQuote.quote; //텍스트를 삽입.
+quote.innerHTML = `${randomQuote.quote}\n-${randomQuote.author}`; //텍스트를 삽입.

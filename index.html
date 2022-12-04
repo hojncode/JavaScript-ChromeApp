@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css"/>
-    <title>나의 크롬앱 만들기</title>
+    <title>window</title>
   </head>
   <body>
     <form class="hidden" id="login-form" >
@@ -19,20 +19,24 @@
       <input type="submit" value="로그인" />
     </form>
     <!-- <a href="https://www.naver.com/">네이버</a> -->
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do" required/>
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
+    <div class="container">
+      <h2 id="clock">00:00:00</h2>
+      <div id="weather">
+        <span class="weather-text"></span>
+        <span class="weather-text"></span>
+      </div>
+      <h2 id="greeting" class="hidden hello"></h2>
+      <form id="todo-form">
+        <input type="text" placeholder="Write a To Do" required/>
+      </form>
+      <ul id="todo-list"></ul>
+      <div id="quote">
+        <span class="quote-text"></span>
+        <span></span>
+      </div>
+      
     </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
+    <script src="./js/key.js"></script>
     <script src="app.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/greetings.js"></script>

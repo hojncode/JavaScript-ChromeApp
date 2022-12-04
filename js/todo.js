@@ -27,7 +27,7 @@ function paintToDo(newTodo) {
     const span = document.createElement("span"); // createElement 로 span 태그를 html 에 만들어준다.
     span.innerText = newTodo.text; // 여기의 newTodo 는 handleToDoSubmit()에서 만든 것.
     const button = document.createElement("button"); // button 생성.
-    button.innerText = "❎"; //버튼에 텍스트 추가.
+    button.innerText = "✔️"; //버튼에 텍스트 추가.
     button.addEventListener("click",deleteToDo); // 이벤트리스너 추가 - click 시 발동.
     li.appendChild(span); // 자바스크립트 에서 만들어준 li태그에 span 태그를 자식으로 붙여준다.
     li.appendChild(button);

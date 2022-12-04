@@ -32,7 +32,7 @@ function onLoginSubmit(event) {
 
 //h1태그 화면에 보이게 만드는 함수
 function paintGreetings(username) {
-    greeting.innerText = `Hello  ${username}`; // innerText란 메소드의 역할은 greeting을 id로 가진 태그에 해당 텍스트를 띄워준다
+    greeting.innerText = `Hello \n ${username}`; // innerText란 메소드의 역할은 greeting을 id로 가진 태그에 해당 텍스트를 띄워준다
     greeting.classList.remove(HIDDEN_CLASSNAME); // classList란 메소드의 역할은 greeting을 id로 가진 태그에 포함된 class에서 remove(삭제를 원하는 요소)를 적용시킨다.
 }
 

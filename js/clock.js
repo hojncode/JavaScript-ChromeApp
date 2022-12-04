@@ -13,3 +13,5 @@ function getClock() {
 
 getClock(); //여기에 불러옴으로써 페이지가 새로고침되자마자 실행해준다. 여기에 추가하지 않으면 아래 setInterval 이 실행되고 부터 getClock이 실행된다
 setInterval(getClock, 1000);
+
+
