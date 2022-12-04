@@ -13,3 +13,49 @@ img {
    z-index: -1;
    opacity:80%;
    }
+
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.container {
+   top: 200px;
+   position:absolute;
+   z-index: 0;
+   width: inherit;
+   height: inherit;
+   display: flex;
+   flex-direction: column;
+   justify-self: center;
+   align-items: center;
+}
+
+.hello {
+   color: rgb(0, 0, 0);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.quote-text {
+   font-size: 15px;
+   background-color: white;
+   border-radius: 5px;
+   padding: 5px 10px;
+}
+
+.weather-text {
+   font-size: 15px;
+   /* background-color: white; */
+   color: white;
+   padding: 5px 10px;
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
